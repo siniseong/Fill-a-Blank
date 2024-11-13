@@ -13,14 +13,14 @@ export default function Home() {
     const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (!session) {
-        router.push('/auth/signin');
+        router.push('/auth/header');
       }
     });
 
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       if (!session) {
-        router.push('/auth/signin');
+        router.push('/auth/header');
       }
     });
 

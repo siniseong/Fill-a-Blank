@@ -29,13 +29,19 @@ export default function AuthButton() {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     setSession(null);
-    router.push('/auth/signin');
   };
 
   if (!session) {
     return (
       <button
-        onClick={() => router.push('/auth/signin')}
+        onClick={async () => {
+          const { error } = await supabase.auth.signInWithOAuth({
+            provider: 'kakao',
+          });
+          if (error) {
+            console.error('Kakao Sign In Error:', error.message);
+          }
+        }}
         className="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
       >
         로그인하기
@@ -45,7 +51,6 @@ export default function AuthButton() {
 
   return (
     <div>
-      <p className="text-xl mb-4">안녕하세요, {session.user.email}님!</p>
       <button
         onClick={handleLogout}
         className="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
