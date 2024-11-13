@@ -35,8 +35,11 @@ export default function Header() {
   };
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
-    setSession(null);
+    const confirmLogout = window.confirm('진짜 로그아웃 하시겠습니까?'); 
+    if (confirmLogout) {
+      await supabase.auth.signOut();
+      setSession(null);
+    }
   };
 
   return (
