@@ -1,47 +1,13 @@
 'use client';
 
-import AuthButton from './components/AuthButton';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+import Header from './components/header/page'; // 헤더 컴포넌트 임포트
 
 export default function Home() {
-  const router = useRouter();
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      if (!session) {
-        router.push('/auth/header');
-      }
-    });
-
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      if (!session) {
-        router.push('/auth/header');
-      }
-    });
-
-    return () => {
-      if (subscription?.subscription) {
-        subscription.subscription.unsubscribe();
-      } else if (subscription?.unsubscribe) {
-        subscription.unsubscribe();
-      }
-    };
-  }, [router]);
-
-  if (!session) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md text-center">
-        <h1 className="text-4xl font-bold mb-4">Next.js Supabase OAuth Example</h1>
-        <AuthButton />
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <Header /> {/* 헤더를 항상 렌더링 */}
+      <div className="flex items-center justify-center flex-grow">
+        <h1 className="text-4xl font-bold">Hello World</h1> {/* Hello World 표시 */}
       </div>
     </div>
   );
