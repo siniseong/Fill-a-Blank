@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
-import './signin.css';
+import './header.css';
 
 export default function Header() {
   const [session, setSession] = useState(null);
