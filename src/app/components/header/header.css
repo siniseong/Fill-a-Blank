@@ -7,4 +7,12 @@
     width: 109%;
 
 }
+
+.title {
+    font-size: 28px;
+    margin-left: 80px;
+  }
   
+  .small-button {
+    margin-right: 80px;
+  } 

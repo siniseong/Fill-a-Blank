@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="title">로고</h1>
+        <h1 className="title" onClick={() => window.location.href = '/'}>💬</h1>
         {session ? (
           <button 
             onClick={handleLogout} 
