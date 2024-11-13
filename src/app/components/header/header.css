@@ -2,17 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     border-bottom: 1px solid #d1d5db;
-    width: 109%;
-
+    width: 100%;
 }
 
 .title {
-    font-size: 28px;
-    margin-left: 80px;
-  }
-  
-  .small-button {
-    margin-right: 80px;
-  } 
+    font-size: 24px;
+    margin-left: 40px;
+    font-family: 'Preta', sans-serif;
+}
+
+.small-button {
+    width: 70px;
+    height: 25px;
+    margin-right: 40px;
+    font-weight: 500 !important;
+    font-family: 'Preta', sans-serif;
+}
