@@ -1,36 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 웹페이지 Docker로 베포하기 수행평가 (핑계 마스터 되기 n일차)
+> 자세한 프로젝트 세부내용은 [노션 기획 페이지 링크](https://siniseong.notion.site/n-13ce00310b3980e5bfa5e9aa3fc37278?pvs=4)를 확인해주세요.
 
-## Getting Started
+수행평가로 받은 과제이지만 그렇게 느끼고 싶지 않아서 재미있는 주제를 선택하였습니다. 친구들에게 무슨 일이 있었을 때 쌤께 어떻게 말하지? 등 다양한 핑계를 생각하고 있는 것을 보았습니다. 이럴 때 조금이라도 더 편하게 생각하라고 서비스를 만들게되었습니다:)
 
-First, run the development server:
+> ※ 무슨 일이 있을 때 변명보다 잘못을 늬우치는 것이 더 중요함을 알립니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 사용 기술
+[![My Skills](https://skillicons.dev/icons?i=docker,nextjs,tailwind,supabase)](https://skillicons.dev)
