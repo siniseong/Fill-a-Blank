@@ -1,0 +1,119 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.proverb {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.answer-form {
+    margin-bottom: 1rem;
+}
+
+.answer-input {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+}
+
+.submit-button {
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.popup-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0 8px 0; 
+    text-align: left;
+}
+
+.popup-message {
+    text-align: center;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.close-button2 {
+    width: 150px;
+    height: 46px;
+    background-color: #3182F7;
+    color: #E6FFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.0rem;
+}
+
+.close-button {
+    width: 150px;
+    height: 46px;
+    background-color: #DFE0E2;
+    color: #494D56;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.0rem;
+}
+
+.next-button {
+    width: 150px;
+    height: 50px;
+    margin-top: 1rem;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pop-next-button{
+    width: 300px;
+    height: 46px;
+    background-color: #3182F7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
