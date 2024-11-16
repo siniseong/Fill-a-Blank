@@ -1,7 +1,22 @@
+/* 기본 스타일 초기화 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    overflow: hidden; 
+}
+
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; 
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.game-container > * {
+    transform: translateY(-70px); 
 }
 
 .title {
@@ -58,7 +73,7 @@
 .popup-title {
     font-weight: 600;
     font-size: 24px;
-    margin: 10px 0 8px 0; 
+    margin: 10px 0 8px 0;
     text-align: left;
 }
 
@@ -108,7 +123,7 @@
     cursor: pointer;
 }
 
-.pop-next-button{
+.pop-next-button {
     width: 300px;
     height: 46px;
     background-color: #3182F7;
@@ -118,7 +133,7 @@
     cursor: pointer;
 }
 
-.check-button{
+.check-button {
     width: 300px;
     height: 46px;
     background-color: #3182F7;
