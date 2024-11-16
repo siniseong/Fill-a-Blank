@@ -58,7 +58,7 @@
 .popup-title {
     font-weight: 600;
     font-size: 24px;
-    margin: 10px 0 8px 0; 
+    margin: 10px 0 8px 0; /* 아래쪽 여백을 4px로 변경 */
     text-align: left;
 }
 

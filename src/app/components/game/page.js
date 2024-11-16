@@ -2,17 +2,7 @@
 
 import { useState } from 'react';
 import './game.css';
-
-const proverbs = [
-  {
-    proverb: "호랑이 굴에 가야 ____을 한다.",
-    answer: "선생님"
-  },
-  {
-    proverb: "가는 말이 고와야 ____이 곱다.",
-    answer: "오는 말"
-  }
-];
+import proverbsData from './proverbs.json'; 
 
 export default function Game() {
   const [userAnswer, setUserAnswer] = useState('');
@@ -22,7 +12,7 @@ export default function Game() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const currentProverb = proverbs[currentProverbIndex];
+    const currentProverb = proverbsData[currentProverbIndex]; 
     if (userAnswer === currentProverb.answer) {
       setIsCorrect(true);
     } else {
@@ -34,7 +24,7 @@ export default function Game() {
   const handleNext = () => {
     setUserAnswer('');
     setIsPopupVisible(false); 
-    setCurrentProverbIndex((prevIndex) => (prevIndex + 1) % proverbs.length);
+    setCurrentProverbIndex((prevIndex) => (prevIndex + 1) % proverbsData.length); 
   };
 
   const closePopup = () => {
@@ -44,7 +34,7 @@ export default function Game() {
   return (
     <div className="game-container">
       <h1 className="title">속담 빈칸 맞추기 게임</h1>
-      <p className="proverb">{proverbs[currentProverbIndex].proverb}</p>
+      <p className="proverb">{proverbsData[currentProverbIndex].proverb}</p>
       <form onSubmit={handleSubmit} className="answer-form">
         <input
           type="text"
@@ -63,7 +53,7 @@ export default function Game() {
             {isCorrect ? (
               <>
                 <p className="popup-title">대박! 문제를 맞췄어요.</p> 
-                <p>축하합니다🎉 다음 문제로 넘어가도 되겠는걸요?</p>
+                <p>축하합니다. 다음 문제로 넘어가도 되겠는걸요?</p>
                 <div className="popup-buttons">
                   <button onClick={handleNext} className="pop-next-button">
                     다음
