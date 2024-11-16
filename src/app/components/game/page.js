@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabaseClient';
 import './game.css';
 import proverbsData from './proverbs.json'; 
 
@@ -9,9 +10,34 @@ export default function Game() {
   const [currentProverbIndex, setCurrentProverbIndex] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false); 
   const [isCorrect, setIsCorrect] = useState(false); 
+  const [session, setSession] = useState(null); 
+  const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false); 
+
+  useEffect(() => {
+    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    return () => {
+      if (subscription?.subscription) {
+        subscription.subscription.unsubscribe();
+      } else if (subscription?.unsubscribe) {
+        subscription.unsubscribe();
+      }
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!session) {
+      setIsLoginPopupVisible(true); 
+      return;
+    }
+
     const currentProverb = proverbsData[currentProverbIndex]; 
     if (userAnswer === currentProverb.answer) {
       setIsCorrect(true);
@@ -29,6 +55,10 @@ export default function Game() {
 
   const closePopup = () => {
     setIsPopupVisible(false); 
+  };
+
+  const closeLoginPopup = () => {
+    setIsLoginPopupVisible(false); 
   };
 
   return (
@@ -74,6 +104,19 @@ export default function Game() {
                 </div>
               </>
             )}
+          </div>
+        </div>
+      )}
+      {isLoginPopupVisible && ( 
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <p className="popup-title">로그인하세요!</p>
+            <p>문제를 풀기 위해서는 로그인이 필요합니다.</p>
+            <div className="popup-buttons">
+              <button onClick={closeLoginPopup} className="check-button">
+                확인
+              </button>
+            </div>
           </div>
         </div>
       )}

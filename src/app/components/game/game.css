@@ -58,7 +58,7 @@
 .popup-title {
     font-weight: 600;
     font-size: 24px;
-    margin: 10px 0 8px 0; /* 아래쪽 여백을 4px로 변경 */
+    margin: 10px 0 8px 0; 
     text-align: left;
 }
 
@@ -109,6 +109,16 @@
 }
 
 .pop-next-button{
+    width: 300px;
+    height: 46px;
+    background-color: #3182F7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.check-button{
     width: 300px;
     height: 46px;
     background-color: #3182F7;
