@@ -12,6 +12,7 @@ html, body {
     justify-content: center; 
     height: 100vh;
     box-sizing: border-box;
+    margin-top: -70px;
 }
 
 

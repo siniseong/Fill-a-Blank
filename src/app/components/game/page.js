@@ -95,7 +95,7 @@ export default function Game() {
                 <p className="popup-title">아쉽게도 문제를 틀렸어요.</p> 
                 <p>다시 문제를 풀면 동일한 점수의 포인트를 받을 수 있어요.</p>
                 <div className="popup-buttons">
-                  <button onClick={closePopup} className="close-button">
+                  <button onClick={handleNext} className="close-button">
                     넘어가기
                   </button>
                   <button onClick={closePopup} className="close-button2">
